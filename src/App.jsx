@@ -6,11 +6,6 @@ import {
   GripHorizontal, CheckSquare, LogOut, Loader2
 } from 'lucide-react';
 
-// Si usas Firebase real, reemplaza esta config por la tuya
-import { initializeApp } from 'firebase/app';
-import { getAuth, signInAnonymously, onAuthStateChanged } from 'firebase/auth';
-import { getFirestore, doc, setDoc, onSnapshot } from 'firebase/firestore';
-
 // --- MOCK DATA INICIAL ---
 const initialPosts = [
   {
@@ -47,7 +42,7 @@ export default function SocialPlannerApp() {
   // Funciones globales para actualizar datos
   const handleUpdateAllPosts = (newPosts) => {
     setPosts(newPosts);
-    // Aquí iría la lógica para guardar en BD
+    // Aquí iría la lógica para guardar en BD cuando conectes Firebase
   };
 
   const updatePost = (updatedPost) => {
