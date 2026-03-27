@@ -11,7 +11,7 @@ const initialPosts = [
   {
     id: '1',
     date: '2026-04-02',
-    image: '[https://picsum.photos/seed/post1/400/400](https://picsum.photos/seed/post1/400/400)',
+    image: 'https://picsum.photos/seed/post1/400/400',
     copy: '¡Lanzamiento de nuestra nueva herramienta! 🚀\n\nDescubre cómo ahorrar horas de trabajo con SocialPlanner.\n\n#SaaS #Productividad #Marketing',
     status: 'scheduled',
     checklist: { design: true, copy: true, hashtags: true, approved: false }
@@ -19,7 +19,7 @@ const initialPosts = [
   {
     id: '2',
     date: '2026-04-05',
-    image: '[https://picsum.photos/seed/post2/400/400](https://picsum.photos/seed/post2/400/400)',
+    image: 'https://picsum.photos/seed/post2/400/400',
     copy: '3 tips para organizar tu contenido semanal 📅\n\n1. Usa bloques temporales.\n2. Recicla contenido antiguo.\n3. Usa una herramienta centralizada.\n\n#Tips #Organizacion',
     status: 'draft',
     checklist: { design: true, copy: false, hashtags: false, approved: false }
@@ -27,7 +27,7 @@ const initialPosts = [
   {
     id: '3',
     date: '2026-04-08',
-    image: '[https://picsum.photos/seed/post3/400/400](https://picsum.photos/seed/post3/400/400)',
+    image: 'https://picsum.photos/seed/post3/400/400',
     copy: 'Detrás de escena de nuestro equipo de desarrollo 💻✨\n\n#BehindTheScenes #TechTeam',
     status: 'published',
     checklist: { design: true, copy: true, hashtags: true, approved: true }
@@ -42,7 +42,6 @@ export default function SocialPlannerApp() {
   // Funciones globales para actualizar datos
   const handleUpdateAllPosts = (newPosts) => {
     setPosts(newPosts);
-    // Aquí iría la lógica para guardar en BD cuando conectes Firebase
   };
 
   const updatePost = (updatedPost) => {
@@ -156,7 +155,6 @@ function Header() {
 }
 
 // --- VISTAS DEL DASHBOARD ---
-
 function DashboardView({ posts, setView }) {
   const stats = [
     { label: 'Programados', value: posts.filter(p => p.status === 'scheduled').length, color: 'text-blue-400', border: 'border-blue-500/30', bg: 'bg-blue-500/10' },
